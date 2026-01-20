@@ -27,6 +27,7 @@ Notes:
   in later repos (500+), embeddings become a first-class learned table.
 """
 
+import json
 import logging
 from pathlib import Path
 from typing import Final
@@ -39,6 +40,7 @@ from toy_gpt_train.d_train import (
     train_model,
 )
 from toy_gpt_train.io_artifacts import (
+    JsonObject,
     write_artifacts,
     write_training_log,
 )
@@ -114,6 +116,16 @@ def main() -> None:
         epochs=epochs,
         row_labeler=row_labeler_context2(vocab, vocab_size),
     )
+
+    # 7c: After write_artifacts(), append start_tokens to meta
+    meta_path: Path = BASE_DIR / "artifacts" / "00_meta.json"
+    with meta_path.open("r", encoding="utf-8") as f:
+        meta: JsonObject = json.load(f)
+    start_tokens: list[str] = tokens[:2]  # context-2
+    meta["start_tokens"] = list(start_tokens)  # explicit list for JSON serialization
+    with meta_path.open("w", encoding="utf-8") as f:
+        json.dump(meta, f, indent=2, sort_keys=True)
+        f.write("\n")
 
     # Step 8: Qualitative check - what does the model predict after the first 2 tokens?
     previous_token: str = tokens[0]

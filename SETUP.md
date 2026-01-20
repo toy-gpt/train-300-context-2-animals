@@ -89,11 +89,12 @@ Run Python checks and tests (as available):
 ```shell
 uv run ruff format .
 uv run ruff check . --fix
-uv run pytest
+uv run -- python -m pytest
 
+uv run validate-pyproject pyproject.toml
 uv run pyright
 uv run bandit -c pyproject.toml -r src
-uv run validate-pyproject pyproject.toml
+uv run deptry .
 ```
 
 Build and serve docs (hit **CTRL+c** in the VS Code terminal to quit serving):

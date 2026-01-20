@@ -2,6 +2,15 @@
 
 Defines a minimal next-token prediction model for a context-2 setting
 (uses two tokens in sequence as context).
+A context-2 model computes P(next | previous, current).
+
+Initial token sequence for demonstration:
+((tokens[0], tokens[1]), tokens[2])
+#  prev       curr        next
+
+Slide forward by one token for each prediction.
+((tokens[1], tokens[2]), tokens[3])
+#  prev       curr        next
 
 Responsibilities:
 - Represent a simple parameterized model that maps a
@@ -46,6 +55,9 @@ import logging
 from datafun_toolkit.logger import get_logger, log_header
 from toy_gpt_train.c_model import SimpleNextTokenModel
 
+from toy_gpt_train_animals.a_tokenizer import DEFAULT_CORPUS_PATH, SimpleTokenizer
+from toy_gpt_train_animals.b_vocab import Vocabulary
+
 __all__ = ["SimpleNextTokenModel"]
 
 LOG: logging.Logger = get_logger("MODEL", level="INFO")
@@ -53,18 +65,14 @@ LOG: logging.Logger = get_logger("MODEL", level="INFO")
 
 def main() -> None:
     """Demonstrate a forward pass of the simple context-2 model."""
-    # Local imports keep modules decoupled.
-    from toy_gpt_train_animals.a_tokenizer import DEFAULT_CORPUS_PATH, SimpleTokenizer
-    from toy_gpt_train_animals.b_vocab import Vocabulary
-
     log_header(LOG, "Simple Next-Token Model Demo (Context-2)")
 
     # Step 1: Tokenize input text.
     tokenizer: SimpleTokenizer = SimpleTokenizer(corpus_path=DEFAULT_CORPUS_PATH)
     tokens: list[str] = tokenizer.get_tokens()
 
-    if len(tokens) < 2:
-        LOG.info("Need at least two tokens for context-2 demonstration.")
+    if len(tokens) < 3:
+        LOG.info("Need at least three tokens for context-2 demonstration.")
         return
 
     # Step 2: Build vocabulary.
@@ -74,8 +82,8 @@ def main() -> None:
     model: SimpleNextTokenModel = SimpleNextTokenModel(vocab_size=vocab.vocab_size())
 
     # Step 4: Select context tokens (previous, current).
-    previous_token: str = tokens[1]
-    current_token: str = tokens[2]
+    previous_token: str = tokens[0]
+    current_token: str = tokens[1]
 
     previous_id: int | None = vocab.get_token_id(previous_token)
     current_id: int | None = vocab.get_token_id(current_token)

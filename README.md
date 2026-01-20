@@ -1,4 +1,4 @@
-# Toy-GPT: train-300-context-2-animals-animals
+# Toy-GPT: train-300-context-2-animals
 
 [![Docs](https://img.shields.io/badge/docs-live-blue)](https://toy-gpt.github.io/train-300-context-2-animals/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
