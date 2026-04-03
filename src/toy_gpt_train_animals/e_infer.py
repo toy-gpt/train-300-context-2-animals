@@ -72,7 +72,7 @@ def main() -> None:
         expected_rows=v * v,
     )
 
-    args: argparse.Namespace = parse_args()
+    args: argparse.Namespace = parse_args([])
 
     # Choose a start token.
     start_token = args.start_token
