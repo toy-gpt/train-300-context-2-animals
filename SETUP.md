@@ -66,11 +66,11 @@ git pull
 In the same VS Code terminal, run the Python source files:
 
 ```shell
-uv run python src/toy_gpt_train_animals/a_tokenizer.py
-uv run python src/toy_gpt_train_animals/b_vocab.py
-uv run python src/toy_gpt_train_animals/c_model.py
-uv run python src/toy_gpt_train_animals/d_train.py
-uv run python src/toy_gpt_train_animals/e_infer.py
+uv run python src/toy_gpt_train/a_tokenizer.py
+uv run python src/toy_gpt_train/b_vocab.py
+uv run python src/toy_gpt_train/c_model.py
+uv run python src/toy_gpt_train/d_train.py
+uv run python src/toy_gpt_train/e_infer.py
 ```
 
 If a command fails, verify:

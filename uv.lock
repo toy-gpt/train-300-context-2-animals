@@ -1059,23 +1059,10 @@ wheels = [
 ]
 
 [[package]]
-name = "toy-gpt-train-300-context-2"
-version = "0.9.6"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "datafun-toolkit" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/8a/39/c9ed47b6ebb223b83264a959bd81be8c38769fcc7630162588f443479968/toy_gpt_train_300_context_2-0.9.6.tar.gz", hash = "sha256:343eb4247158290c4e8e529bb9b8ed3b280881b1a880a57d0487b4d12051d73f", size = 83832, upload-time = "2026-01-20T16:30:07.135Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/5d/a8/660ee11dc2dfaf5d539d982ab7e7db9c7d13564454331d942cf4271e7d01/toy_gpt_train_300_context_2-0.9.6-py3-none-any.whl", hash = "sha256:64edf503b8e94707b2a61e53e657434c6e88005930ace5f4ab47783c2eb64eb0", size = 26434, upload-time = "2026-01-20T16:30:05.819Z" },
-]
-
-[[package]]
 name = "toy-gpt-train-300-context-2-animals"
 source = { editable = "." }
 dependencies = [
     { name = "datafun-toolkit" },
-    { name = "toy-gpt-train-300-context-2" },
 ]
 
 [package.optional-dependencies]
@@ -1115,7 +1102,6 @@ requires-dist = [
     { name = "pytest", marker = "extra == 'dev'" },
     { name = "pytest-cov", marker = "extra == 'dev'" },
     { name = "ruff", marker = "extra == 'dev'" },
-    { name = "toy-gpt-train-300-context-2" },
     { name = "twine", marker = "extra == 'dev'" },
     { name = "validate-pyproject", marker = "extra == 'dev'" },
 ]
