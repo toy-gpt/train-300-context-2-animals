@@ -9,7 +9,7 @@ WHY: Minimal correctness requirement.
 import importlib
 import sys
 
-PACKAGE_NAME = "toy_gpt_train_animals"  # CUSTOM: Use package name.
+PACKAGE_NAME = "toy_gpt_train"  # CUSTOM: Use package name.
 
 # Modules that can run with no arguments
 DEMO_MODULES_NO_ARGS = [

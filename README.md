@@ -1,9 +1,9 @@
-# Toy-GPT: train-300-context-2-animals-animals
+# Toy-GPT: train-300-context-2-animals
 
 [![Docs](https://img.shields.io/badge/docs-live-blue)](https://toy-gpt.github.io/train-300-context-2-animals/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/license/MIT)
-[![CI](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/ci-python-mkdocs.yml/badge.svg?branch=main)](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/ci-python-mkdocs.yml)
-[![Deploy-Docs](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/deploy-mkdocs.yml/badge.svg?branch=main)](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/deploy-mkdocs.yml)
+[![CI](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/ci-python-mkdocs-shared.yml/badge.svg?branch=main)](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/ci-python-mkdocs-shared.yml)
+[![Deploy-Docs](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/deploy-mkdocs-shared.yml/badge.svg?branch=main)](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/deploy-mkdocs-shared.yml)
 [![Check Links](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/links.yml/badge.svg)](https://github.com/toy-gpt/train-300-context-2-animals/actions/workflows/links.yml)
 [![Dependabot](https://img.shields.io/badge/Dependabot-enabled-brightgreen.svg)](https://github.com/toy-gpt/train-300-context-2-animals/security)
 
@@ -50,7 +50,7 @@ See `SETUP.md` for full setup and workflow instructions.
 Run the full training script:
 
 ```shell
-uv run python src/toy_gpt_train_animals/d_train.py
+uv run python src/toy_gpt_train/d_train.py
 ```
 
 Run individually:
@@ -60,11 +60,11 @@ Run individually:
 - e_infer consumes artifacts
 
 ```shell
-uv run python src/toy_gpt_train_animals/a_tokenizer.py
-uv run python src/toy_gpt_train_animals/b_vocab.py
-uv run python src/toy_gpt_train_animals/c_model.py
-uv run python src/toy_gpt_train_animals/d_train.py
-uv run python src/toy_gpt_train_animals/e_infer.py
+uv run python src/toy_gpt_train/a_tokenizer.py
+uv run python src/toy_gpt_train/b_vocab.py
+uv run python src/toy_gpt_train/c_model.py
+uv run python src/toy_gpt_train/d_train.py
+uv run python src/toy_gpt_train/e_infer.py
 ```
 
 ## Provenance and Purpose
